@@ -14,8 +14,10 @@
         <div class="col-lg-12">
 
             <h1>Rental Mobil</h1>
-            <p>Sewa Mobil Murah.</p>
-            <b><?php echo $title; ?></b> <br>Update Harga <?php echo tanggal() ?>
+            <p>Sewa Mobil di <?php echo $title; ?> dengan harga yang murah dengan fasilitas dan pelayanan bagus. Kami menyewakan mobil dengan berbagai macam tipe
+                Silahkan cek list mobil yang bisa anda sewa di bawah ini.</p>
+            <b><?php echo $title; ?></b> <br>
+            <!-- Update Harga <?php echo tanggal() ?> -->
             <hr>
 
             <div class="row">

@@ -39,7 +39,7 @@ $meta      = $this->meta_model->get_meta();
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
                         <li><a class="text-muted" href="<?php echo base_url('contact') ?>">Contact Us</a></li>
-                        <li><a class="text-muted" href="<?php echo base_url('products') ?>">Produk</a></li>
+                        <!-- <li><a class="text-muted" href="<?php echo base_url('products') ?>">Produk</a></li> -->
                         <!-- <li><a class="text-muted" href="<?php echo base_url('berita') ?>">Berita</a></li> -->
                     </ul>
                 </div>

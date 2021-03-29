@@ -13,7 +13,7 @@ class Seller extends CI_Controller
   {
     $list_seller = $this->user_model->user_seller();
     $data = [
-      'title'                 => 'Data Seller',
+      'title'                 => 'Data Member',
       'list_seller'           => $list_seller,
       'content'               => 'admin/user/index_seller'
     ];

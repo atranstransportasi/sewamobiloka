@@ -100,7 +100,7 @@ class Products extends CI_Controller
     $products                           = $this->products_model->product_category($category_product_id, $limit, $start);
     // End Listing Berita
     $data = array(
-      'title'                           => 'Kota : ' . $category_products->category_product_name,
+      'title'                           => 'Kota ' . $category_products->category_product_name,
       'deskripsi'                       => 'Kota - ',
       'keywords'                        => 'Kota - ',
       'pagination'                      => $this->pagination->create_links(),

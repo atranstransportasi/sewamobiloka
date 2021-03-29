@@ -7,12 +7,11 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		
 	}
 
 	public function index()
 	{
-		if($this->session->userdata('id')){
+		if ($this->session->userdata('id')) {
 			redirect('myaccount');
 		}
 
@@ -87,10 +86,10 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
-		if($this->session->userdata('id')){
+		if ($this->session->userdata('id')) {
 			redirect('myaccount');
 		}
-		
+
 		$this->form_validation->set_rules(
 			'user_name',
 			'Nama',
@@ -98,7 +97,7 @@ class Auth extends CI_Controller
 			['required' => 'nama harus di isi']
 		);
 		$this->form_validation->set_rules(
-			'email',
+			'real_email',
 			'Email',
 			'required|trim|valid_email|is_unique[user.email]',
 			[
@@ -125,12 +124,11 @@ class Auth extends CI_Controller
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
 		} else {
-			$email = $this->input->post('email', true);
+			$email = $this->input->post('real_email', true);
 			$data = [
 				'user_title'	=> $this->input->post('user_title'),
 				'user_name' 	=> htmlspecialchars($this->input->post('user_name', true)),
 				'email' 		=> htmlspecialchars($email),
-				'user_image' 	=> 'default.jpg',
 				'user_phone'	=> $this->input->post('user_phone'),
 				'password'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'role_id'		=> 2,
@@ -144,7 +142,10 @@ class Auth extends CI_Controller
 				'token'			=> $token,
 				'date_created'	=> time()
 			];
-			$this->db->insert('user', $data);
+			if ($this->input->post('email') == "") //If something is in the 'email' field, it has propbably been filled by a bot, because regular users can't see the field.
+			{
+				$this->db->insert('user', $data);
+			}
 			$this->db->insert('user_token', $user_token);
 			//Kirim Email
 			$this->_sendEmail($token, 'verify');
@@ -165,7 +166,7 @@ class Auth extends CI_Controller
 			'mailtype' 		=> 'html',
 			'charset' 		=> 'utf-8',
 
-			
+
 		];
 
 		$this->load->library('email', $config);

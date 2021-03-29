@@ -12,8 +12,8 @@
         <div class="card">
             <div class="card-body">
                 <h2>About Us</h2>
-                <p>Jual Emas Mini.</p>
-               
+                <p>Rental mobil tersedia di seluruh kota besar di Indonesia.</p>
+
             </div>
         </div>
     </div>

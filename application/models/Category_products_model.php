@@ -17,6 +17,15 @@ class Category_products_model extends CI_Model
     $query = $this->db->get();
     return $query->result();
   }
+  public function kota_home()
+  {
+    $this->db->select('*');
+    $this->db->from('category_products');
+    $this->db->order_by('id', 'DESC');
+    $this->db->limit(6);
+    $query = $this->db->get();
+    return $query->result();
+  }
   public function detail_category_product($id)
   {
     $this->db->select('*');
