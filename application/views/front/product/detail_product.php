@@ -36,7 +36,7 @@
                             <?php endif; ?><br>
 
 
-                            <a class="btn btn-primary btn-block" href="<?php echo base_url('products/order/' . $products->id); ?>">Booking</a>
+                            <a class="btn btn-primary btn-block" href="<?php echo base_url('products/order/' . md5($products->id)); ?>">Booking</a>
 
 
                         </div>
