@@ -124,7 +124,7 @@ class Products_model extends CI_Model
     $this->db->join('category_products', 'category_products.id = products.category_product_id', 'LEFT');
     $this->db->join('user', 'user.id = products.user_id', 'LEFT');
     //End Join
-    $this->db->where('md5(products.id)', $id);
+    $this->db->where('products.id', $id);
     $query = $this->db->get();
     return $query->row();
   }
