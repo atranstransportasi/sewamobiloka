@@ -7,6 +7,7 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
+		$this->load->model('pengaturan_model');
 	}
 
 	public function index()
@@ -90,6 +91,8 @@ class Auth extends CI_Controller
 			redirect('myaccount');
 		}
 
+
+
 		$this->form_validation->set_rules(
 			'user_name',
 			'Nama',
@@ -156,15 +159,19 @@ class Auth extends CI_Controller
 	}
 	private function _sendEmail($token, $type)
 	{
+
+		$email_order = $this->pengaturan_model->email_order();
+
+
 		$config = [
 
-			'protocol' 		=> 'smtp',
-			'smtp_host' 	=> 'ssl://mail.sitemail.com',
-			'smtp_port' 	=> 465,
-			'smtp_user' 	=> 'mail@sitemail.com',
-			'smtp_pass' 	=> 'password',
-			'mailtype' 		=> 'html',
-			'charset' 		=> 'utf-8',
+			'protocol'     => "$email_order->protocol",
+			'smtp_host'   => "$email_order->smtp_host",
+			'smtp_port'   => $email_order->smtp_port,
+			'smtp_user'   => "$email_order->smtp_user",
+			'smtp_pass'   => "$email_order->smtp_pass",
+			'mailtype'     => 'html',
+			'charset'     => 'utf-8',
 
 
 		];
@@ -174,7 +181,7 @@ class Auth extends CI_Controller
 
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('system@tokominigold.com', 'Testing');
+		$this->email->from("$email_order->smtp_user", 'Sewamobiloka');
 		$this->email->to($this->input->post('email'));
 
 		if ($type == 'verify') {

@@ -11,6 +11,7 @@ class Products extends CI_Controller
     $this->load->library('pagination');
     $this->load->model('meta_model');
     $this->load->model('products_model');
+    $this->load->model('pengaturan_model');
     $this->load->model('transaksi_model');
     $this->load->model('category_products_model');
     $this->load->helper('string'); //Memanggil Helper String
