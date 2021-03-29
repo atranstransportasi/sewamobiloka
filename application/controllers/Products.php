@@ -244,7 +244,7 @@ class Products extends CI_Controller
       //Kirim Email
       $this->_sendEmail($insert_id, 'order');
       $this->session->set_flashdata('message', 'Pesanan Anda telah Terkirim');
-      redirect(base_url('products/order_success/' . $insert_id), 'refresh');
+      redirect(base_url('products/order_success/' . md5($insert_id)), 'refresh');
     }
   }
   private function _sendEmail($insert_id)

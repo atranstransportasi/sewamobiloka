@@ -44,7 +44,7 @@ $user           = $this->user_model->user_detail($id);
 
                 <?php
 
-                echo form_open('products/order/' . $product->id, array('class' => 'needs-validation', 'novalidate' => 'novalidate'));
+                echo form_open_multipart('products/order/' . $product->id, array('class' => 'needs-validation', 'novalidate' => 'novalidate'));
 
                 $kode_transaksi = date('dmY') . strtoupper(random_string('alnum', 5));
                 ?>
