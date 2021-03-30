@@ -224,6 +224,7 @@ class Products extends CI_Controller
         'user_id'                     => $this->input->post('user_id'),
         'kode_transaksi'              => $this->input->post('kode_transaksi'),
         'product_name'                => $this->input->post('product_name'),
+        'kota'                        => $this->input->post('kota'),
         'product_size'                => $this->input->post('product_size'),
         'product_price'               => $this->input->post('product_price'),
         'total_price'                 => $total_price,

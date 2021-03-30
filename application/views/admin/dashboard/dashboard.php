@@ -26,7 +26,7 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Products</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Mobil</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($products); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/products'); ?>" style="color:#333;text-decoration:none;">
@@ -48,7 +48,7 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Category Produk</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Kota</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($category_products); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/category_products'); ?>" style="color:#333;text-decoration:none;">
@@ -70,7 +70,7 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Reseller</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Member</div>
                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo count($user_seller); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
                             <a href="<?php echo base_url('admin/seller'); ?>" style="color:#333;text-decoration:none;">
@@ -98,25 +98,21 @@
                     <thead class="thead-light">
                         <tr>
                             <th>Tanggal</th>
+                            <th>Mobil</th>
                             <th>Customer</th>
                             <th>No Hp</th>
-                            <th>Status</th>
+                            <th>Kota</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($new_transaksi as $new_transaksi) : ?>
                             <tr>
-                            <td><?php echo date('d F Y', $new_transaksi->date_created); ?></td>
+                                <td><?php echo date('d F Y', $new_transaksi->date_created); ?></td>
+                                <td><?php echo $new_transaksi->product_name; ?></td>
                                 <td><?php echo $new_transaksi->user_name; ?></td>
                                 <td><?php echo $new_transaksi->user_phone; ?></td>
-                                <td>
-                                <?php if ($new_transaksi->type_transaksi == 'Jual') :?>
-                                <div class="badge badge-success"><?php echo $new_transaksi->type_transaksi; ?></div>
-                            <?php else:?>
-                                <div class="badge badge-danger"><?php echo $new_transaksi->type_transaksi; ?></div>
-                            <?php endif;?>
-                                </td>
+                                <td><?php echo $new_transaksi->kota; ?></td>
                                 <td><a href="<?php echo base_url('admin/transaksi/detail/') . $new_transaksi->id; ?>" class="btn btn-sm btn-primary" target="blank">Detail</a></td>
                             </tr>
 
@@ -138,17 +134,17 @@
             <div>
                 <?php foreach ($user_seller as $user_seller) : ?>
                     <div class="customer-message align-items-center">
-                        <a class="font-weight-bold" href="<?php echo base_url('admin/user/detail/' .$user_seller->id);?> ">
+                        <a class="font-weight-bold" href="<?php echo base_url('admin/user/detail/' . $user_seller->id); ?> ">
                             <div class="text-truncate message-title"><?php echo $user_seller->user_name; ?></div>
                             <div class="small text-gray-500 message-time font-weight-bold">
                                 No Hp : <?php echo $user_seller->user_phone; ?> · Aktif Sejak : <?php echo date('d F Y', $user_seller->date_created); ?>
                                 <br>Status : <?php if ($user_seller->is_active == 1) : ?>
-                                        <span class="badge badge-success">Aktif</span>
-                                    <?php else : ?>
-                                        <span class="badge badge-danger">Nonaktif</span>
-                                    <?php endif; ?>
+                                    <span class="badge badge-success">Aktif</span>
+                                <?php else : ?>
+                                    <span class="badge badge-danger">Nonaktif</span>
+                                <?php endif; ?>
                             </div>
-                            
+
                         </a>
                     </div>
                 <?php endforeach; ?>

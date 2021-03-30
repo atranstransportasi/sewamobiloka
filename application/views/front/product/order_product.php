@@ -55,6 +55,7 @@ $user           = $this->user_model->user_detail($id);
                 <input type="hidden" name="kode_transaksi" value="<?php echo $kode_transaksi ?>">
                 <input type="hidden" name="product_name" value="<?php echo $product->product_name; ?>">
                 <input type="hidden" name="product_size" value="<?php echo $product->product_size; ?>">
+                <input type="hidden" name="kota" value="<?php echo $product->category_product_name; ?>">
 
 
 

@@ -27,9 +27,9 @@
                     <tr>
                         <th>No</th>
                         <th>Tanggal</th>
-                        <th>Produk</th>
+                        <th>Mobil</th>
                         <th>Customer</th>
-                        <th>Type</th>
+                        <th>Kota</th>
                         <th>Qty</th>
                         <th>Harga</th>
                         <th width="25%">Action</th>
@@ -42,19 +42,12 @@
                         <td><?php echo date('d F Y', $transaksi->date_created); ?></td>
                         <td><?php echo $transaksi->product_name; ?></td>
                         <td><?php echo $transaksi->user_name; ?></td>
-                        <td>
-                            <?php if ($transaksi->type_transaksi == 'Jual') :?>
-                                <div class="badge badge-success"><?php echo $transaksi->type_transaksi; ?></div>
-                            <?php else:?>
-                                <div class="badge badge-danger"><?php echo $transaksi->type_transaksi; ?></div>
-                            <?php endif;?>
-                            
-                            
-                        </td>
+                        <td><?php echo $transaksi->kota; ?></td>
                         <td><?php echo $transaksi->product_qty; ?> Pcs</td>
-                        <td>Rp. <?php $total = $transaksi->product_price*$transaksi->product_qty; echo number_format($total,'0',',','.'); ?></td>
+                        <td>Rp. <?php $total = $transaksi->product_price * $transaksi->product_qty;
+                                echo number_format($total, '0', ',', '.'); ?></td>
                         <td>
-                            <a href="<?php echo base_url('admin/transaksi/detail/' . $transaksi->id); ?>" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Lihat</a>                            
+                            <a href="<?php echo base_url('admin/transaksi/detail/' . $transaksi->id); ?>" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Lihat</a>
                         </td>
                     </tr>
                 <?php $no++;
