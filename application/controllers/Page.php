@@ -24,13 +24,13 @@ class Page extends CI_Controller
         ];
         $this->load->view('front/layout/wrapp', $data, FALSE);
     }
-    public function reseller()
+    public function syarat_ketentuan()
     {
         $data = [
-            'title'     => 'Reseller',
-            'deskripsi' => 'Reseller',
+            'title'     => 'Syarat dan Ketentuan Sewa',
+            'deskripsi' => 'Syarat dan Ketentuan Sewa',
             'keywords'  => 'Reseller',
-            'content'   => 'front/page/reseller_page'
+            'content'   => 'front/page/syarat_ketentuan'
         ];
         $this->load->view('front/layout/wrapp', $data, FALSE);
     }

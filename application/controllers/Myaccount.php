@@ -35,7 +35,9 @@ class Myaccount extends CI_Controller
     $user = $this->user_model->user_detail($id);
     $meta = $this->meta_model->get_meta();
     $this->form_validation->set_rules(
-      'user_name','Nama','required',
+      'user_name',
+      'Nama',
+      'required',
       [
         'required'                      => 'Nama harus di isi'
       ]
@@ -76,7 +78,7 @@ class Myaccount extends CI_Controller
           $this->load->library('image_lib', $config);
           $this->image_lib->resize();
           // Hapus Gambar Lama Jika Ada upload gambar baru
-          if ($user->user_image != "") {
+          if ($user->user_image != "NULL") {
             unlink('./assets/img/avatars/' . $user->user_image);
             // unlink('./assets/img/artikel/thumbs/' . $berita->berita_gambar);
           }
@@ -97,15 +99,15 @@ class Myaccount extends CI_Controller
       } else {
         //Update Berita Tanpa Ganti Gambar
         // Hapus Gambar Lama Jika ada upload gambar baru
-        if ($user->user_image != "")
-        $data  = [
-          'id'                          => $id,
-          'user_name'                   => $this->input->post('user_name'),
-          'email'                       => $this->input->post('email'),
-          'user_phone'                  => $this->input->post('user_phone'),
-          'user_address'                => $this->input->post('user_address'),
-          'date_updated'                => time()
-        ];
+        if ($user->user_image != "NULL")
+          $data  = [
+            'id'                          => $id,
+            'user_name'                   => $this->input->post('user_name'),
+            'email'                       => $this->input->post('email'),
+            'user_phone'                  => $this->input->post('user_phone'),
+            'user_address'                => $this->input->post('user_address'),
+            'date_updated'                => time()
+          ];
         $this->user_model->update($data);
         $this->session->set_flashdata('message', 'Data telah di Update');
         redirect(base_url('myaccount'), 'refresh');
@@ -126,7 +128,9 @@ class Myaccount extends CI_Controller
     $meta                               = $this->meta_model->get_meta();
 
     $this->form_validation->set_rules(
-      'password1','Password','required|trim|min_length[3]|matches[password2]',
+      'password1',
+      'Password',
+      'required|trim|min_length[3]|matches[password2]',
       [
         'required'                      => 'Password harus Di isi',
         'matches'                       => 'Password tidak sama',
@@ -209,13 +213,17 @@ class Myaccount extends CI_Controller
     $meta = $this->meta_model->get_meta();
     $category_products = $this->category_products_model->get_category_products();
     $this->form_validation->set_rules(
-      'product_name','Nama produk','required',
+      'product_name',
+      'Nama produk',
+      'required',
       [
         'required'                      => 'Nama produk harus di isi',
       ]
     );
     $this->form_validation->set_rules(
-      'product_desc','Deskripsi Produk','required',
+      'product_desc',
+      'Deskripsi Produk',
+      'required',
       [
         'required'                      => 'Deskripsi Produk harus di isi',
       ]
@@ -314,7 +322,9 @@ class Myaccount extends CI_Controller
       //Validasi
       $valid = $this->form_validation;
       $valid->set_rules(
-        'product_name','Nama Produk','required',
+        'product_name',
+        'Nama Produk',
+        'required',
         ['required'                     => '%s harus diisi']
       );
       if ($valid->run()) {
@@ -380,18 +390,18 @@ class Myaccount extends CI_Controller
           //Update Berita Tanpa Ganti Gambar
           // Hapus Gambar Lama Jika ada upload gambar baru
           if ($products->product_img != "")
-          $data  = [
-            'id'                          => $id,
-            'user_id'                     => $this->session->userdata('id'),
-            'category_product_id'         => $this->input->post('category_id'),
-            'product_name'                => $this->input->post('product_name'),
-            'product_desc'                => $this->input->post('product_desc'),
-            'product_price'               => $this->input->post('product_price'),
-            'product_stock'               => $this->input->post('product_stock'),
-            'product_size'                => $this->input->post('product_size'),
-            'product_status'              => $this->input->post('product_status'),
-            'date_updated'                => time()
-          ];
+            $data  = [
+              'id'                          => $id,
+              'user_id'                     => $this->session->userdata('id'),
+              'category_product_id'         => $this->input->post('category_id'),
+              'product_name'                => $this->input->post('product_name'),
+              'product_desc'                => $this->input->post('product_desc'),
+              'product_price'               => $this->input->post('product_price'),
+              'product_stock'               => $this->input->post('product_stock'),
+              'product_size'                => $this->input->post('product_size'),
+              'product_status'              => $this->input->post('product_status'),
+              'date_updated'                => time()
+            ];
           $this->products_model->update($data);
           $this->session->set_flashdata('message', 'Data telah di Update');
           redirect(base_url('myaccount/myproducts'), 'refresh');

@@ -252,6 +252,7 @@ class Products extends CI_Controller
   {
     $email_order = $this->pengaturan_model->email_order();
     $transaksi  = $this->transaksi_model->detail_transaksi($insert_id);
+    $meta = $this->meta_model->get_meta();
 
     $config = [
 
@@ -274,14 +275,288 @@ class Products extends CI_Controller
 
 
     $this->email->subject('Order ' . $transaksi->kode_transaksi . '');
-    $this->email->message('Terima Kasih Atas Order Anda <br> 
-                          Kode Transaksi : ' . $transaksi->kode_transaksi . '<br> 
-                          Email          : ' . $transaksi->user_email . '<br>
-                          Lama Sewa          : ' . $transaksi->product_qty . '<br>
-                          Jumlah Tagihan : ' . $transaksi->total_price . '<br>
-                          Tanggal Jemput : ' . $transaksi->tanggal_jemput . '<br>
-                          Jam Jemput     : ' . $transaksi->jam_jemput . '<br>
-                          Alamat Jemput     : ' . $transaksi->alamat_jemput . '<br>
+    $this->email->message('
+    
+    
+    
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=320, initial-scale=1" />
+  <title>Airmail Invoice</title>
+  <style type="text/css">
+
+ 
+    #outlook a {
+      padding: 0;
+    }
+
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+
+
+    body, table, td, p, a, li, blockquote {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+
+
+    html,
+    body,
+    .body-wrap,
+    .body-wrap-cell {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #464646;
+      text-align: left;
+    }
+
+    img {
+      border: 0;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse !important;
+    }
+
+    td, th {
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #464646;
+      line-height:1.5em;
+    }
+
+    b a,
+    .footer a {
+      text-decoration: none;
+      color: #464646;
+    }
+
+    a.blue-link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+ 
+
+    td.center {
+      text-align: center;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .body-padding {
+      padding: 24px 40px 40px;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #D8D8D8;
+    }
+
+    table.full-width-gmail-android {
+      width: 100% !important;
+    }
+
+
+    .header {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      height: 16px;
+      padding-top: 19px;
+      padding-bottom: 7px;
+    }
+
+    .header a {
+      color: #464646;
+      text-decoration: none;
+    }
+
+
+    .footer a {
+      font-size: 12px;
+    }
+  </style>
+
+  <style type="text/css" media="only screen and (max-width: 650px)">
+    @media only screen and (max-width: 650px) {
+      * {
+        font-size: 16px !important;
+      }
+
+      table[class*="w320"] {
+        width: 320px !important;
+      }
+
+      td[class="mobile-center"],
+      div[class="mobile-center"] {
+        text-align: center !important;
+      }
+
+      td[class*="body-padding"] {
+        padding: 20px !important;
+      }
+
+      td[class="mobile"] {
+        text-align: right;
+        vertical-align: top;
+      }
+    }
+  </style>
+
+</head>
+<body style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+ <td valign="top" align="left" width="100%" style="background: #2f383f;">
+ <center>
+   <table class="w320 full-width-gmail-android" bgcolor="#2f383f" cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+        <td width="100%" height="48" valign="top">           
+              <table class="full-width-gmail-android" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td class="header center" width="100%" >
+                    <a href="' . $meta->link . '" style="color:#ffffff;">
+                    ' . $meta->title . '
+                    </a>
+                  </td>
+                </tr>
+              </table>
+        </td>
+      </tr>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff">
+      <tr>
+        <td align="center">
+          <center>
+            <table class="w320" cellspacing="0" cellpadding="0" width="500">
+              <tr>
+                <td class="body-padding mobile-padding">
+
+                <table cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td class="left" style="padding-bottom:20px; text-align:left;">
+                      <b>Invoice:</b> ' . $transaksi->kode_transaksi . '
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="left" style="padding-bottom:40px; text-align:left;">
+                    Hi ' . $transaksi->user_name . ',<br>
+                    Order Anda Telah Kami Terima, Kami Akan Segera Menghubungi Anda
+                    </td>
+                  </tr>
+                </table>
+
+                <table cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td>
+                      <b>Mobil</b>
+                    </td>
+                    <td>
+                      <b>Lama Sewa</b>
+                    </td>
+                    <td>
+                      <b>Harga</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-bottom" height="5"></td>
+                    <td class="border-bottom" height="5"></td>
+                    <td class="border-bottom" height="5"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top:5px;">
+                    ' . $transaksi->product_name . '
+                    </td>
+                    <td style="padding-top:5px;">
+                    ' . $transaksi->product_qty . ' Hari
+                    </td>
+                    <td style="padding-top:5px;" class="mobile">
+                      Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <b>Tanggal Jemput </b> : ' . $transaksi->tanggal_jemput . '
+                <b>Jam Jemput </b> : ' . $transaksi->jam_jemput . '
+                <b>Alamat Jemput </b> : ' . $transaksi->alamat_jemput . '
+                <br><br>
+
+                <table cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td class="left" style="text-align:left;">
+                      Terima Kasih,
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="left" width="auto" height="20" style="padding-top:10px; text-align:left;">
+                      <img class="left" width="auto" height="20" src="' . base_url('assets/img/logo/' . $meta->logo) . '" alt="Company Name">
+                    </td>
+                  </tr>
+                </table>
+
+                </td>
+              </tr>
+            </table>
+          </center>
+        </td>
+      </tr>
+    </table>
+
+    
+
+  </center>
+  </td>
+</tr>
+</table>
+</body>
+</html>
+    
+    
+    
+    
+    
                            ');
 
 
