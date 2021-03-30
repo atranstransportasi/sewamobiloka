@@ -11,10 +11,10 @@
                     </div>
                     <?php
                     $attributes = array('class' => 'user');
-                    echo form_open('auth/forgotpassword', $attributes)
+                    echo form_open_multipart('auth/forgotpassword', $attributes)
                     ?>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" name="email" id="email" placeholder="Enter Email Address..." value="<?php echo set_value('email'); ?>" style="text-transform: lowercase">
+                        <input type="text" class="form-control form-control-user" name="real_email" id="email" placeholder="Enter Email Address..." value="<?php echo set_value('email'); ?>" style="text-transform: lowercase">
                         <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 

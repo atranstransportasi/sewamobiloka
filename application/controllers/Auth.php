@@ -191,7 +191,7 @@ class Auth extends CI_Controller
 		} elseif ($type == 'forgot') {
 			$this->email->subject('Reset Password');
 			$this->email->message('Silahkan Klik Link ini untuk Mereset Password 
-			<a href=" ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ' ">Reset Password</a>');
+			<a href=" ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('real_email') . '&token=' . urlencode($token) . ' ">Reset Password</a>');
 		}
 
 
@@ -254,7 +254,7 @@ class Auth extends CI_Controller
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
 		} else {
-			$email = $this->input->post('email');
+			$email = $this->input->post('real_email');
 			$user = $this->db->get_where('user', ['email' => $email, 'is_active' => 1])->row_array();
 			if ($user) {
 				$token = base64_encode(random_bytes(25));

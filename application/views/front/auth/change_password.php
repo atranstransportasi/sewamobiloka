@@ -12,7 +12,7 @@
                     </div>
                     <?php
                     $attributes = array('class' => 'user');
-                    echo form_open('auth/changepassword', $attributes)
+                    echo form_open_multipart('auth/changepassword', $attributes)
                     ?>
                     <div class="form-group">
                         <input type="password" class="form-control form-control-user" name="password1" id="password1" placeholder="Enter new Password...">
