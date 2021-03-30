@@ -160,7 +160,7 @@ class Auth extends CI_Controller
 	private function _sendEmail($token, $type)
 	{
 
-		$email_order = $this->pengaturan_model->email_order();
+		$email_order = $this->pengaturan_model->email_register();
 
 
 		$config = [
