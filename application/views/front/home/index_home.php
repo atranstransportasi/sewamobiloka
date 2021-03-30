@@ -117,7 +117,7 @@
                         <hr>
 
                         <?php
-                        echo form_open('auth/register')
+                        echo form_open_multipart('auth/register')
                         ?>
 
                         <div class="form-group">
