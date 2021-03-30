@@ -18,28 +18,17 @@ $meta = $this->meta_model->get_meta();
                 <div class="row">
                     <div class="col-md-6 p-5">
                         <div style="line-height: 35px;">
-                            <h3><b>Keuntungan Menjadi Reseller</b></h3>
-                            Reseller MiniGold merupakan bagian dari menyebarkan semangat menabung emas sekaligus
-                            membuka peluang usaha bagi anda semua. Keuntungan menjadi reseller anda akan mendapatkan potongan harga yang menarik.
-                            Menjadi reseller tokominigold.com memiliki beberapa syarat.<br><br>
-                            <h4><b>Syarat dan ketentuan menjadi reseller</b></h4>
-                            <ol>
-                                <li>Pembelian awal Rp. 500.000,-</li>
-                                <li>Bersedia bekerja sama dengan Reseller Tokominigold.com</li>
-                                <li>Melampirkan scan KTP / KK</li>
-                            </ol>
-                            <h4><b>Cara Mendaftar</b></h4>
-                            <ul>
-                                <li>Isi Form pendaftaran register di halaman ini</li>
-                                <li>Konfirmasi Pendaftaran melalui Whatsapp <?php echo $meta->telepon; ?></li>
-                            </ul>
+                            <h3><b>Keuntungan Menjadi Member</b></h3>
+                            Dengan Menjadi member anda kan mendapatkan potongan harga khusus member, silahkan daftar untuk mendapatkan diskon
+                            khusus member sewa mobil disini.<br><br>
+
 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
                             </div>
                             <?php
                             echo form_open_multipart('auth/register')
@@ -61,9 +50,12 @@ $meta = $this->meta_model->get_meta();
                                 <input type="text" class="form-control" name="user_phone" placeholder="Nomor Handphone" value="<?php echo set_value('user_phone'); ?>">
                                 <?php echo form_error('user_phone', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
+
+                            <input type="hidden" class="form-control" name="email">
+
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email Address" value="<?php echo set_value('email'); ?>" style="text-transform: lowercase">
-                                <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                <input type="text" class="form-control" name="real_email" placeholder="Email Address" value="<?php echo set_value('real_email'); ?>" style="text-transform: lowercase">
+                                <?php echo form_error('real_email', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -81,11 +73,9 @@ $meta = $this->meta_model->get_meta();
 
                             <?php echo form_close() ?>
                             <hr>
+
                             <div class="text-center">
-                                <a class="small" href="<?php echo base_url('auth/forgotpassword'); ?>">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="<?php echo base_url('auth') ?>">Already have an account? Login!</a>
+                                <a class="small" href="<?php echo base_url('auth') ?>">Sudah Punya Akun? Silahkan Login!</a>
                             </div>
                         </div>
                     </div>

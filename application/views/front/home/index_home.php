@@ -100,7 +100,7 @@
                                     </div>
                                     <div class="col-9">
                                         <h4>Layanan terdekat</h4>
-                                        Tersedia di Berbagai Kota Besar.
+                                        Tersedia di Berbagai Kota Besar di Indonesia.
                                     </div>
                                 </div>
                             </div>
@@ -113,6 +113,7 @@
                 <div class="card">
 
                     <div class="card-body">
+
                         <h5 class="card-title">Daftar Jadi Member</h5>
                         <hr>
 
@@ -120,24 +121,31 @@
                         echo form_open_multipart('auth/register')
                         ?>
 
-                        <div class="form-group">
-                            <select class="form-control form-control-chosen" name="user_title" value="">
-                                <option value='Bapak'>Bapak</option>
-                                <option value='Ibu'>Ibu</option>
-                                <option value='Saudara'>Saudara</option>
-                                <option value='Saudari'>Saudari</option>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <select class="form-control form-control-chosen" name="user_title" value="">
+                                        <option value='Bapak'>Bapak</option>
+                                        <option value='Ibu'>Ibu</option>
+                                        <option value='Saudara'>Saudara</option>
+                                        <option value='Saudari'>Saudari</option>
 
-                            </select>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="user_name" placeholder="Nama Lengkap" value="<?php echo set_value('user_name'); ?>">
+                                    <?php echo form_error('user_name', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="user_name" placeholder="Nama Lengkap" value="<?php echo set_value('user_name'); ?>">
-                            <?php echo form_error('user_name', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="user_phone" placeholder="Nomor Handphone" value="<?php echo set_value('user_phone'); ?>">
                             <?php echo form_error('user_phone', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
+
 
                         <input type="hidden" class="form-control" name="email">
 
@@ -157,11 +165,11 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
-                            Register Account
+                            Daftar
                         </button>
 
                         <?php echo form_close() ?>
-                        <hr>
+
 
                         <div class="text-center">
                             <a class="small" href="<?php echo base_url('auth') ?>">Sudah Punya Akun? Login!</a>
@@ -219,11 +227,13 @@
 
         <?php foreach ($kota as $kota) : ?>
             <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5> <?php echo $kota->category_product_name; ?> </h5>
+                <a href="<?php echo base_url('products/category_products/' . $kota->id); ?>">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5> <?php echo $kota->category_product_name; ?> </h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         <?php endforeach; ?>
     </div>

@@ -29,10 +29,10 @@
                     <?php echo form_close() ?>
                     <hr>
                     <div class="text-center">
-                        <a class="small" href="<?php echo base_url('auth/forgotpassword'); ?>">Forgot Password?</a>
+                        <a class="small" href="<?php echo base_url('auth/forgotpassword'); ?>">Lupa Password?</a>
                     </div>
                     <div class="text-center">
-                        <a class="small" href="<?php echo base_url('auth/register') ?> ">Create an Account!</a>
+                        <a class="small" href="<?php echo base_url('auth/register') ?> ">Daftar Menjadi Member!</a>
                     </div>
                 </div>
 

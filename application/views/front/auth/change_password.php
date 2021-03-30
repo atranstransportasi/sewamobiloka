@@ -6,7 +6,7 @@
 
                 <div class="p-5">
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900">Change your password?</h1>
+                        <h1 class="h4 text-gray-900">Ubah Password anda?</h1>
                         <h5 class="mb-4"><?php echo $this->session->userdata('reset_email'); ?></h5>
                         <?php echo $this->session->flashdata('message'); ?>
                     </div>
@@ -26,7 +26,7 @@
 
 
                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                        Change Password
+                        Ubah Password
                     </button>
 
                     <?php echo form_close() ?>

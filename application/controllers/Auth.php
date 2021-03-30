@@ -122,7 +122,7 @@ class Auth extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$data = [
-				'title'			=> 'Register Reseller',
+				'title'			=> 'Register Member',
 				'content'       => 'front/auth/register'
 			];
 			$this->load->view('front/layout/wrapp', $data, FALSE);
@@ -134,7 +134,7 @@ class Auth extends CI_Controller
 				'email' 		=> htmlspecialchars($email),
 				'user_phone'	=> $this->input->post('user_phone'),
 				'password'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-				'role_id'		=> 2,
+				'role_id'		=> 3,
 				'is_active'		=> 0,
 				'date_created'	=> time()
 			];

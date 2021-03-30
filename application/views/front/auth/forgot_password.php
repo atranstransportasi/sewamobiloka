@@ -6,7 +6,7 @@
 
                 <div class="p-5">
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4">Forgot your password?</h1>
+                        <h1 class="h4 text-gray-900 mb-4">Silahkan Masukan email yang pernah di daftarkan</h1>
                         <?php echo $this->session->flashdata('message'); ?>
                     </div>
                     <?php
@@ -27,7 +27,7 @@
                     <hr>
 
                     <div class="text-center">
-                        <a class="small" href="<?php echo base_url('auth') ?> ">Back to Login</a>
+                        <a class="small" href="<?php echo base_url('auth') ?> ">Kembali Ke Halaman Login</a>
                     </div>
                 </div>
 
