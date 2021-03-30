@@ -239,7 +239,7 @@ class Auth extends CI_Controller
 	public function forgotPassword()
 	{
 		$this->form_validation->set_rules(
-			'email',
+			'real_email',
 			'Email',
 			'required|trim|valid_email',
 			[
