@@ -42,6 +42,8 @@ $user           = $this->user_model->user_detail($id);
                 <hr>
                 <h3> Detail Customer</h3>
 
+                
+
                 <?php
 
                 echo form_open_multipart('products/order/' . $product->id, array('class' => 'needs-validation', 'novalidate' => 'novalidate'));
@@ -56,6 +58,7 @@ $user           = $this->user_model->user_detail($id);
                 <input type="hidden" name="product_name" value="<?php echo $product->product_name; ?>">
                 <input type="hidden" name="product_size" value="<?php echo $product->product_size; ?>">
                 <input type="hidden" name="kota" value="<?php echo $product->category_product_name; ?>">
+                <input type="hidden" name="product_term" value="<?php echo $product->product_desc; ?>">
 
 
 
@@ -66,6 +69,8 @@ $user           = $this->user_model->user_detail($id);
                     <input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
                     <input type="hidden" name="product_price" value="<?php echo $product->price_reseller; ?>">
                     <input type="hidden" name="user_title" value="<?php echo $user->user_title; ?>">
+
+
 
 
 

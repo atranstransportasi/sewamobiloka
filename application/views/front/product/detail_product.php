@@ -66,37 +66,17 @@
 
 
             <div class="card">
-                <div class="card-header">Produk Lainya</div>
+                <div class="card-header">Destinasi Rental</div>
                 <div class="card-body">
 
+                    <?php foreach ($listcategory_products as $listcategory_products) : ?>
+                        <ul class="list-group list-group-flush">
+                            <a class="text-muted text-decoration-none" href="<?php echo base_url('products/category_products/' . $listcategory_products->id); ?>">
+                                <li class="list-group-item"><?php echo $listcategory_products->category_product_name; ?></li>
+                            </a>
 
-                    <?php foreach ($related_products as $related_products) : ?>
-
-                        <div class="row">
-                            <span class="col-md-4"><img src="<?php echo base_url('assets/img/product/' . $related_products->product_img); ?>" class="img img-thumbnail img-fluid"></span>
-
-
-                            <span class="col-md-8">
-                                <h5><a href="<?php echo base_url('products/detail/' . $related_products->product_slug); ?>"> <?php echo $related_products->product_name; ?></a></h5>
-                                <a class="btn btn-primary btn-sm" href="<?php echo base_url('products/detail/' . $related_products->product_slug); ?>"> Detail Produk</a>
-                            </span>
-                        </div>
-                        <hr>
-
-
+                        </ul>
                     <?php endforeach; ?>
-
-
-
-
-
-
-
-
-
-
-
-
 
                 </div>
             </div>
