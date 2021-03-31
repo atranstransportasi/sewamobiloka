@@ -9,24 +9,24 @@ $meta      = $this->meta_model->get_meta();
 
 
 <section class="bantuan mt-auto">
-    <div class="container">
+    <div class="container py-3">
         <div class="row">
             <div class="col-md-8 text-light"><span style="font-size:35px;font-weight:700;">Butuh Bantuan ? Hubungi Kami</span></div>
             <div class="col-md-4 text-light"><span style="font-size:30px;font-weight:700;"><i class="fas fa-phone"></i> <?php echo $meta->telepon; ?></span></div>
         </div>
     </div>
 
-    <footer class="pt-4 pt-md-5 pb-md-5 border-top bg-light">
+    <footer class="pt-4 pt-md-5 pb-md-5 border-top bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md">
+                <div class="col-md-3">
                     <a href="<?php echo base_url(); ?>"><img class="mb-2" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>" alt="" width="250"></a>
                     <span style="font-size:18px;"><br>
                         <i class="fa fa-phone"></i> <?php echo $meta->telepon ?><br>
                         <i class="fa fa-envelope"></i> <?php echo $meta->email ?>
                     </span>
                 </div>
-                <div class="col-6 col-md ml-md-5">
+                <div class="col-md-5 footer">
                     <h5>Kota</h5>
                     <ul class="list-unstyled text-small">
                         <?php foreach ($category as $category) : ?>
@@ -34,7 +34,7 @@ $meta      = $this->meta_model->get_meta();
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <div class="col-5 col-md">
+                <div class="col-md-2">
                     <h5>Halaman</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
@@ -43,7 +43,7 @@ $meta      = $this->meta_model->get_meta();
                         <!-- <li><a class="text-muted" href="<?php echo base_url('berita') ?>">Berita</a></li> -->
                     </ul>
                 </div>
-                <div class="col-6 col-md">
+                <div class="col-md-2">
                     <h5>Social Media</h5>
 
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->

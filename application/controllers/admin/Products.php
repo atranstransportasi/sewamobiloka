@@ -265,7 +265,7 @@ class Products extends CI_Controller
       // unlink('./assets/img/artikel/thumbs/' . $berita->berita_gambar);
     }
     //End Hapus Gambar
-    $data = ['id'                           => $products->id];
+    $data = ['id' => $id];
     $this->products_model->delete($data);
     $this->session->set_flashdata('message', 'Data telah di Hapus');
     redirect($_SERVER['HTTP_REFERER']);

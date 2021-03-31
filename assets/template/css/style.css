@@ -405,9 +405,16 @@ ul.navbar-nav .nav-item:after {
 }
 
 .footer {
-  background-color: #333 !important;
+  background-color: #fff !important;
   padding: 20px;
-  color: #fff !important;
+}
+.footer ul {
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
 }
 .bantuan {
   background-color: #1791c0;
