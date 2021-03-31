@@ -450,7 +450,7 @@ class Products extends CI_Controller
 <tr>
  <td valign="top" align="left" width="100%" style="background: #2f383f;">
  <center>
-   <table class="w320 full-width-gmail-android" bgcolor="#2f383f" cellpadding="0" cellspacing="0" border="0" width="100%">
+   <table class="w320 full-width-gmail-android" bgcolor="#E5E5E5" cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr>
         <td width="100%" height="48" valign="top">           
               <table class="full-width-gmail-android" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -494,7 +494,7 @@ class Products extends CI_Controller
                       <b>Mobil</b>
                     </td>
                     <td>
-                      <b>Lama Sewa</b>
+                      <b>Durasi</b>
                     </td>
                     <td>
                       <b>Harga</b>
@@ -513,14 +513,49 @@ class Products extends CI_Controller
                     ' . $transaksi->product_qty . ' Hari
                     </td>
                     <td style="padding-top:5px;" class="mobile">
-                      Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '
+                      Rp. ' . number_format($transaksi->product_price, 0, ",", ".") . '
                     </td>
                   </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="border-bottom" height="15"></td>
+                  </tr>
+				          <tr>
+                    <td style="padding-top:5px;">
+                      
+                    </td>
+                    <td style="padding-top:5px;text-align:right;">
+                      <b>Total Harga</b>
+                    </td>
+                    <td style="padding-top:5px;text-align:right;" class="mobile">
+                      <b style="font-size:20px">Rp. ' . number_format($transaksi->product_price, 0, ",", ".") . '</b>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="border-bottom" height="15"></td>
+                  </tr>
+				  <tr>
+                    <td style="padding-top:5px;">
+                      
+                    </td>
+                    <td style="padding-top:5px;text-align:right;">
+                      <b>Total Harga</b>
+                    </td>
+                    <td style="padding-top:5px;text-align:right;" class="mobile">
+                      <b style="font-size:20px;">Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '</b>
+                    </td>
+                  </tr>
+
                 </table>
                 <br>
-                <b>Tanggal Jemput </b> : ' . $transaksi->tanggal_jemput . '
-                <b>Jam Jemput </b> : ' . $transaksi->jam_jemput . '
-                <b>Alamat Jemput </b> : ' . $transaksi->alamat_jemput . '
+                <b>Tanggal Jemput </b> : ' . $transaksi->tanggal_jemput . '<br>
+                <br>Jam Jemput </br> : ' . $transaksi->jam_jemput . '<br>
+                <b>Alamat Jemput </b> : ' . $transaksi->alamat_jemput . '<br>
+                <b>Permintaan Khusus </b> : ' . $transaksi->permintaan_khusus . '<br>
                 <br><br>
 
                 <table cellspacing="0" cellpadding="0" width="100%">
@@ -544,6 +579,31 @@ class Products extends CI_Controller
       </tr>
     </table>
 
+
+    <table class="w320" bgcolor="#2f383f" cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+        <td align="center">
+          <center>
+            <table class="w320" cellspacing="0" cellpadding="0" width="500" bgcolor="#2f383f">
+              <tr>
+                <td>
+                  <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#2f383f">
+                    <tr>
+                      <td class="center" style="padding:25px; text-align:center;">
+                       Hubungi  <b> ' . $meta->telepon . '</b> Untuk informasi lebih lanjut
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        
+      </tr>
+    </table>
     
 
   </center>
