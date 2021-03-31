@@ -152,7 +152,7 @@ $user           = $this->user_model->user_detail($id);
                     <label class="col-lg-3 col-form-label">Alamat Penjemputan <span class="text-danger">*</span>
                     </label>
                     <div class="col-lg-9">
-                        <textarea class="form-control" name="alamat_jemput" placeholder="Alamat Pengiriman" required></textarea>
+                        <textarea class="form-control" name="alamat_jemput" placeholder="Alamat penjemputan" required></textarea>
                         <div class="invalid-feedback">Silahkan masukan Alamat Penjemputan.</div>
                     </div>
                 </div>
