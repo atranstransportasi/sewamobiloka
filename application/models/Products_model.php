@@ -66,7 +66,7 @@ class Products_model extends CI_Model
     $this->db->join('category_products', 'category_products.id = products.category_product_id', 'LEFT');
     $this->db->join('user', 'user.id = products.user_id', 'LEFT');
     //End Join
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('category_product_id', 'ASC');
     $this->db->limit($limit, $start);
     $query = $this->db->get();
     return $query->result();
@@ -96,7 +96,7 @@ class Products_model extends CI_Model
     $this->db->join('user', 'user.id = products.user_id', 'LEFT');
     //End Join
     $this->db->where(['product_status'     =>  'Aktif']);
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('category_product_id', 'ASC');
     $query = $this->db->get();
     return $query->result();
   }
