@@ -448,16 +448,16 @@ class Products extends CI_Controller
 <body style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none">
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr>
- <td valign="top" align="left" width="100%" style="background: #2f383f;">
+ <td valign="top" align="left" width="100%" style="background: #ffffff;">
  <center>
-   <table class="w320 full-width-gmail-android" bgcolor="#E5E5E5" cellpadding="0" cellspacing="0" border="0" width="100%">
+   <table class="w320 full-width-gmail-android" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" width="100%">
       <tr>
         <td width="100%" height="48" valign="top">           
               <table class="full-width-gmail-android" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td class="header center" width="100%" >
                     <a href="' . $meta->link . '" style="color:#ffffff;">
-                    ' . $meta->title . '
+                    <img class="left" width="auto" height="30" src="' . base_url('assets/img/logo/' . $meta->logo) . '" alt="Sewamobiloka">
                     </a>
                   </td>
                 </tr>
@@ -482,8 +482,9 @@ class Products extends CI_Controller
                   </tr>
                   <tr>
                     <td class="left" style="padding-bottom:40px; text-align:left;">
-                    Hi ' . $transaksi->user_name . ',<br>
-                    Order Anda Telah Kami Terima, Kami Akan Segera Menghubungi Anda
+                    <span style="font-size:20px;"> Hi <b>' . $transaksi->user_title . ' ' . $transaksi->user_name . '</b>,</span>
+                    <br>
+                    Terima kasih Telah menggunakan layanan ' . $meta->url . ' . Order Anda Telah Kami Terima, Kami Akan Segera Menghubungi Anda
                     </td>
                   </tr>
                 </table>
@@ -529,34 +530,58 @@ class Products extends CI_Controller
                       <b>Total Harga</b>
                     </td>
                     <td style="padding-top:5px;text-align:right;" class="mobile">
-                      <b style="font-size:20px">Rp. ' . number_format($transaksi->product_price, 0, ",", ".") . '</b>
+                      <b style="font-size:20px">Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '</b>
                     </td>
                   </tr>
 
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="border-bottom" height="15"></td>
-                  </tr>
-				  <tr>
-                    <td style="padding-top:5px;">
-                      
-                    </td>
-                    <td style="padding-top:5px;text-align:right;">
-                      <b>Total Harga</b>
-                    </td>
-                    <td style="padding-top:5px;text-align:right;" class="mobile">
-                      <b style="font-size:20px;">Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '</b>
-                    </td>
-                  </tr>
+                  
 
                 </table>
-                <br>
-                <b>Tanggal Jemput </b> : ' . $transaksi->tanggal_jemput . '<br>
-                <br>Jam Jemput </br> : ' . $transaksi->jam_jemput . '<br>
-                <b>Alamat Jemput </b> : ' . $transaksi->alamat_jemput . '<br>
-                <b>Permintaan Khusus </b> : ' . $transaksi->permintaan_khusus . '<br>
-                <br><br>
+
+                <div style="border:1px solid #ddd;border-radius:4px">
+                <div style="background:#0279d6;color:#ffff;padding:5px 0 5px 20px;border-radius:4px 4px 0 0">
+                <b>Informasi Pelanggan</b>
+                </div>
+                <div style="padding:10px;">
+                <table cellspacing="0" cellpadding="0" width="100%">
+                
+                
+                
+                          <tr>
+                            <td>Nama </td> 
+                  <td>: ' . $transaksi->user_title . ' ' . $transaksi->user_name . '</td>
+                  </tr>
+                  <td>Mobil </td> 
+                  <td>: ' . $transaksi->product_name . '</td>
+                  </tr>
+                  <td>Tanggal Jemput </td> 
+                  <td>: ' . $transaksi->tanggal_jemput . '</td>
+                  </tr>
+                  <td>Jam Jemput </td> 
+                  <td>:' . $transaksi->jam_jemput . '</td>
+                  </tr>
+                  <td>Kota </td> 
+                  <td>: ' . $transaksi->kota . '</td>
+                  </tr>
+                  <td>Alamat Jemput </td> 
+                  <td>: ' . $transaksi->alamat_jemput . '</td>
+                  </tr>
+                  <td>Permintaan Khusus </td> 
+                  <td>: ' . $transaksi->permintaan_khusus . '</td>
+                  
+                  
+                          </tr>
+                          <tr>
+                  </table>
+                  
+                  </div>
+                  </div>
+                  <br>
+
+
+
+
+                
 
                 <table cellspacing="0" cellpadding="0" width="100%">
                   <tr>
@@ -566,7 +591,7 @@ class Products extends CI_Controller
                   </tr>
                   <tr>
                     <td class="left" width="auto" height="20" style="padding-top:10px; text-align:left;">
-                      <img class="left" width="auto" height="20" src="' . base_url('assets/img/logo/' . $meta->logo) . '" alt="Company Name">
+                      
                     </td>
                   </tr>
                 </table>
@@ -577,6 +602,66 @@ class Products extends CI_Controller
           </center>
         </td>
       </tr>
+    </table>
+
+    <table class="w320" bgcolor="#2f383f" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <h4>Kebijakan Pembatalan</h4>
+    <ul>
+        <li>Pembatalan akan dikenakan 100% dari total biaya</li>
+    </ul>
+
+    <h4>Kebijakan Batas Waktu</h4>
+    <ul>
+        <li>Overtime 10% / Jam dari harga sewa, Biaya akan dikenakan jika durasi sewa
+            melebihi 12 jam pemakaian atau lewat dari pukul 23.59 per hari rental.</li>
+        <li>Akomodasi Pengemudi (Overnight Lodging Cost): Rp150.000 / Malam. Biaya akan dikenakan jika penggunaan unit dan pengemudi
+            melewati pukul 23.59 baik dalam dan luar kota.</li>
+    </ul>
+
+    <h4>Kebijakan Penggunaan</h4>
+    <ul>
+        <li>Luar Kota Zona 1: Rp75.000 / Hari</li>
+        <li>Luar Kota Zona 2: Rp125.000 / Hari</li>
+        <li>Luar Kota Zona 3: Rp200.000 / Hari</li>
+        <li>Uang Makan Pengemudi (semua area): Rp75.000 / Hari</li>
+        <li>BBM / Hari (selain paket All-in): Minimum Rp150.000 (unit di bawah 2000 cc) dan Rp200.000 (unit di atas 2000 cc).</li>
+        <li>All-In / Hari: Rp300.000 (unit di bawah 2000 cc) dan Rp450.000 (unit di atas 2000 cc). Penggunaan 12 jam dalam kota termasuk BBM,
+            tol, parkir, dan uang makan pengemudi. Tambahan ini tidak termasuk tiket masuk obyek wisata dan tidak berlaku untuk pemakaian
+            di luar kota. </li>
+        <li>Jemput Luar Kota Zona 1 / Pemakaian: Rp150.000 (unit di bawah 2000 cc) dan Rp300.000 (unit di atas 2000 cc).*</li>
+        <li>Jemput Luar Kota Zona 2 / Pemakaian: Rp225.000 (unit di bawah 2000 cc) dan Rp375.000 (unit di atas 2000 cc).*</li>
+        <li>Jemput Luar Kota Zona 3 / Pemakaian: Rp300.000 (unit di bawah 2000 cc) dan Rp450.000 (unit di atas 2000 cc).*</li>
+        <li>Antar Luar Kota Zona 1 / Pemakaian: Rp175.000 (unit di bawah 2000 cc) dan Rp235.000 (unit di atas 2000 cc).**</li>
+        <li>Antar Luar Kota Zona 2 / Pemakaian: Rp225.000 (unit di bawah 2000 cc) dan Rp325.000 (unit di atas 2000 cc).** </li>
+        <li>Antar Luar Kota Zona 3 / Pemakaian: Rp300.000 (unit di bawah 2000 cc) dan Rp400.000 (unit di atas 2000 cc).**</li>
+        <li>Semua biaya di atas diberikan langsung pada pengemudi. </li>
+        <li>* Jemput Luar Kota: Biaya sudah termasuk BBM, tol, parkir, dan segala sesuatu yang diperlukan oleh pengemudi menuju lokasi penjemputan.</li>
+        <li>** Antar Luar Kota Zona: Biaya sudah termasuk biaya overtime 2 jam untuk pengemudi dan unit kendaraan kembali ke kota asal.</li>
+
+    </ul>
+
+    <h4>Syarat & Ketentuan Penggunaan</h4>
+    <ul>
+        <li>Paket sewa sudah termasuk mobil, pengemudi (kecuali paket Lepas Kunci), penjemputan, penggunaan, serta pengantaran di zona
+            dalam kota, dan PPN. Penjemputan, penggunaan, serta pengantaran di luar zona dalam kota akan dikenakan biaya tambahan.</li>
+        <li>Dalam kondisi tertentu partner bisnis dapat mengganti kendaraan yang telah dipesan dengan kendaraan lain yang lebih baik
+            dengan persetujuan dari pihak pelanggan terlebih dahulu.</li>
+        <li>Pelanggan tidak diperkenankan membawa penumpang dan barang melebihi kapasitas maksimum kendaraan yang disewa.</li>
+        <li>Kecelakaan dan sanksi yang diakibatkan oleh kelebihan penumpang dan kelebihan muatan menjadi tanggung jawab pelanggan
+            sepenuhnya.</li>
+        <li>Kehilangan dan kerusakan barang selama perjalanan di luar tanggung jawab Partner Bisnis dan ' . $meta->link . '.</li>
+        <li>Pelanggan bertanggung jawab atas semua kerusakan yang diakibatkan secara sengaja atau tidak sengaja, termasuk dan tidak
+            terbatas pada kerusakan kursi mobil, noda, goresan, dan lainnya.</li>
+        <li>Partner Bisnis berhak untuk membatalkan penyewaan dengan alasan force majeure (bencana alam) dan berhak menolak
+            pelanggan yang dianggap tidak memenuhi syarat sebagai penyewa atau bertindak di luar dari batas normal. ' . $meta->link . ' tidak
+            bertanggung jawab atas pembatalan dan penolakan tersebut.</li>
+        <li>' . $meta->link . ' tidak bertanggung jawab terhadap kecelakaan, kerugian, korban, dan pengobatan. Lingkup tanggung jawab ' . $meta->link . '
+            hanya sampai pada penerimaan informasi dan pemberi arahan kepada Partner Bisnis dalam memberikan ganti rugi kepada
+            Pelanggan.</li>
+        <li>Apabila terdapat kendala dan pertanyaan terkait pemesanan, silakan hubungi tim Customer Care ' . $meta->link . ' melalui
+            WhatsApp ke ' . $meta->telepon . ' dan email ke ' . $meta->email . '.</li>
+
+    </ul>
     </table>
 
 
@@ -590,7 +675,7 @@ class Products extends CI_Controller
                   <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#2f383f">
                     <tr>
                       <td class="center" style="padding:25px; text-align:center;">
-                       Hubungi  <b> ' . $meta->telepon . '</b> Untuk informasi lebih lanjut
+                       Silahkan Hubungi  <b> ' . $meta->telepon . '</b> Untuk informasi lebih lanjut
                       </td>
                     </tr>
                   </table>
