@@ -11,7 +11,7 @@
                 <div class="carousel-item <?php if ($i == 1) {
                                                 echo 'active';
                                             } ?> ">
-                    <a href="<?php echo base_url() . $slider->galery_url; ?>"><img class="img-fluid" src="<?php echo base_url('assets/img/galery/' . $slider->galery_img) ?>" alt="<?php echo $slider->galery_title ?>"></a>
+                    <a href="<?php echo base_url() . $slider->galery_url; ?>"><img width="100%" class="img-fluid" src="<?php echo base_url('assets/img/galery/' . $slider->galery_img) ?>" alt="<?php echo $slider->galery_title ?>"></a>
                     <div class="container">
                         <div class="carousel-caption text-left">
                         </div>

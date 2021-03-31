@@ -77,9 +77,9 @@ class Products extends CI_Controller
     if ($this->form_validation->run()) {
       $config['upload_path']              = './assets/img/product/';
       $config['allowed_types']            = 'gif|jpg|png|jpeg';
-      $config['max_size']                 = 5000; //Dalam Kilobyte
-      $config['max_width']                = 5000; //Lebar (pixel)
-      $config['max_height']               = 5000; //tinggi (pixel)
+      $config['max_size']                 = 5000000; //Dalam Kilobyte
+      $config['max_width']                = 5000000; //Lebar (pixel)
+      $config['max_height']               = 5000000; //tinggi (pixel)
       $this->load->library('upload', $config);
       if (!$this->upload->do_upload('product_img')) {
         //End Validasi
@@ -102,8 +102,8 @@ class Products extends CI_Controller
         // $config['new_image']        = './assets/img/artikel/thumbs/' . $upload_data['uploads']['file_name'];
         $config['create_thumb']           = TRUE;
         $config['maintain_ratio']         = TRUE;
-        $config['width']                  = 500;
-        $config['height']                 = 500;
+        $config['width']                  = 250;
+        $config['height']                 = 250;
         $config['thumb_marker']           = '';
         $this->load->library('image_lib', $config);
         $this->image_lib->resize();
@@ -159,9 +159,9 @@ class Products extends CI_Controller
       if (!empty($_FILES['product_img']['name'])) {
         $config['upload_path']            = './assets/img/product/';
         $config['allowed_types']          = 'gif|jpg|png|jpeg';
-        $config['max_size']               = 5000; //Dalam Kilobyte
-        $config['max_width']              = 5000; //Lebar (pixel)
-        $config['max_height']             = 5000; //tinggi (pixel)
+        $config['max_size']               = 5000000; //Dalam Kilobyte
+        $config['max_width']              = 5000000; //Lebar (pixel)
+        $config['max_height']             = 5000000; //tinggi (pixel)
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('product_img')) {
           //End Validasi
@@ -185,8 +185,8 @@ class Products extends CI_Controller
           // $config['new_image']        = './assets/img/artikel/thumbs/' . $upload_data['uploads']['file_name'];
           $config['create_thumb']         = TRUE;
           $config['maintain_ratio']       = TRUE;
-          $config['width']                = 500;
-          $config['height']               = 500;
+          $config['width']                = 250;
+          $config['height']               = 250;
           $config['thumb_marker']         = '';
           $this->load->library('image_lib', $config);
           $this->image_lib->resize();

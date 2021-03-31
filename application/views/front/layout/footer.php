@@ -104,6 +104,7 @@ $meta      = $this->meta_model->get_meta();
 
 <script>
     $('#summernote').summernote({
+
         tabsize: 2,
         height: 130,
         toolbar: [
