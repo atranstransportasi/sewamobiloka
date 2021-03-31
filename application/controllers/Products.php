@@ -518,9 +518,7 @@ class Products extends CI_Controller
                   <td>Total Harga </td> 
                   <td style="font-size:18px;color:#0070ee;">: <b>Rp. ' . number_format($transaksi->total_price, 0, ",", ".") . '</b></td>
                   </tr>
-
-                  
-                          
+                         
                   </table>
                   
                   </div>
