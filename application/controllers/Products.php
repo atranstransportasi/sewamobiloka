@@ -470,7 +470,7 @@ class Products extends CI_Controller
       <tr>
         <td align="center">
           <center>
-            <table class="w320" cellspacing="0" cellpadding="0" width="100%">
+            <table class="w320" cellspacing="0" cellpadding="0" width="600">
               <tr>
                 <td class="body-padding mobile-padding">
 
@@ -484,7 +484,7 @@ class Products extends CI_Controller
                     <td class="left" style="padding-bottom:40px; text-align:left;">
                     <span style="font-size:20px;"> Hi <b>' . $transaksi->user_title . ' ' . $transaksi->user_name . '</b>,</span>
                     <br>
-                    Terima kasih Telah menggunakan layanan ' . $meta->url . ' . Order Anda Telah Kami Terima, Kami Akan Segera Menghubungi Anda
+                    Terima kasih Telah menggunakan layanan ' . $meta->link . ' . Order Anda Telah Kami Terima, Kami Akan Segera Menghubungi Anda
                     </td>
                   </tr>
                 </table>
@@ -697,7 +697,7 @@ class Products extends CI_Controller
                 <td>
                   <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#2f383f">
                     <tr>
-                      <td class="center" style="padding:25px; text-align:center;">
+                      <td class="center" style="padding:25px; text-align:center;color:#ffffff">
                        Silahkan Hubungi  <b> ' . $meta->telepon . '</b> Untuk informasi lebih lanjut
                       </td>
                     </tr>
