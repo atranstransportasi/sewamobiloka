@@ -26,11 +26,11 @@
                 <thead class="thead-light">
                     <tr>
                         <th>No</th>
-                        <th>Tanggal</th>
+                        <th>Tanggal Sewa</th>
                         <th>Mobil</th>
                         <th>Customer</th>
                         <th>Kota</th>
-                        <th>Qty</th>
+                        <th>Durasi</th>
                         <th>Harga</th>
                         <th width="25%">Action</th>
                     </tr>
@@ -39,11 +39,11 @@
                 foreach ($transaksi as $transaksi) { ?>
                     <tr>
                         <td><?php echo $no; ?></td>
-                        <td><?php echo date('d F Y', $transaksi->date_created); ?></td>
+                        <td><?php echo $transaksi->tanggal_jemput; ?></td>
                         <td><?php echo $transaksi->product_name; ?></td>
                         <td><?php echo $transaksi->user_name; ?></td>
                         <td><?php echo $transaksi->kota; ?></td>
-                        <td><?php echo $transaksi->product_qty; ?> Pcs</td>
+                        <td><?php echo $transaksi->product_qty; ?> Hari</td>
                         <td>Rp. <?php $total = $transaksi->product_price * $transaksi->product_qty;
                                 echo number_format($total, '0', ',', '.'); ?></td>
                         <td>
