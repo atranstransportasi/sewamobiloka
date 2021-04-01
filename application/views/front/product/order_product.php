@@ -58,9 +58,9 @@ $user           = $this->user_model->user_detail($id);
                 <input type="hidden" name="product_name" value="<?php echo $product->product_name; ?>">
                 <input type="hidden" name="product_size" value="<?php echo $product->product_size; ?>">
                 <input type="hidden" name="kota" value="<?php echo $product->category_product_name; ?>">
-                <div style="display: none;">
-                    <input type="hidden" name="product_term" value="<?php echo $product->product_desc; ?>">
-                </div>
+
+                <input type="hidden" name="product_term" value="<?php echo $product->product_desc; ?>">
+
 
 
 
