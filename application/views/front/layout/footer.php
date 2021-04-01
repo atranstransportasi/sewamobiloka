@@ -44,10 +44,9 @@ $meta      = $this->meta_model->get_meta();
                     </ul>
                 </div>
                 <div class="col-md-2">
-                    <h5>Social Media</h5>
+                    <h5>Payment</h5>
 
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div class="addthis_inline_share_toolbox"></div>
+                    <img src="<?php echo base_url('assets/img/logo/payment.jpg'); ?>" class="img-fluid">
 
                 </div>
             </div>

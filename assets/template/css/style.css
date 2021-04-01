@@ -406,7 +406,7 @@ ul.navbar-nav .nav-item:after {
 
 .footer {
   background-color: #fff !important;
-  padding: 20px;
+  padding: 0px;
 }
 .footer ul {
   -moz-column-count: 3;
