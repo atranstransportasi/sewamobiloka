@@ -76,7 +76,7 @@ class Products extends CI_Controller
     );
     if ($this->form_validation->run()) {
       $config['upload_path']              = './assets/img/product/';
-      $config['allowed_types']            = 'gif|jpg|png|jpeg';
+      $config['allowed_types']            = 'gif|jpg|png|jpeg|webp';
       $config['max_size']                 = 5000000; //Dalam Kilobyte
       $config['max_width']                = 5000000; //Lebar (pixel)
       $config['max_height']               = 5000000; //tinggi (pixel)
@@ -158,7 +158,7 @@ class Products extends CI_Controller
       //Kalau nggak Ganti gambar
       if (!empty($_FILES['product_img']['name'])) {
         $config['upload_path']            = './assets/img/product/';
-        $config['allowed_types']          = 'gif|jpg|png|jpeg';
+        $config['allowed_types']          = 'gif|jpg|png|jpeg|webp';
         $config['max_size']               = 5000000; //Dalam Kilobyte
         $config['max_width']              = 5000000; //Lebar (pixel)
         $config['max_height']             = 5000000; //tinggi (pixel)

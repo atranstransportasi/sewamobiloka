@@ -5,10 +5,6 @@ $category = $this->category_products_model->get_category_products();
 ?>
 
 
-
-
-
-
 <section class="bantuan mt-auto py-3">
     <div class="container pb-2">
         <div class="row">
@@ -47,7 +43,7 @@ $category = $this->category_products_model->get_category_products();
                 <div class="col-md-2 col-6">
                     <h5>Payment</h5>
 
-                    <img src="<?php echo base_url('assets/img/logo/payment.jpg'); ?>" class="img-fluid">
+                    <img src="<?php echo base_url('assets/img/logo/payment.webp'); ?>" class="img-fluid">
 
                 </div>
             </div>
@@ -100,66 +96,11 @@ $category = $this->category_products_model->get_category_products();
 </script>
 
 
-
-<script type="text/javascript">
-    $('#menu-utama').affix({
-        offset: {
-            top: 500
-        }
-    })
-</script>
-
 <!-- Google Analitycs -->
 <?php echo $meta->google_analytics; ?>
 <!-- End Google Analitycs -->
 
 
-
-
-<!-- SUMMERNOTE -->
-<link href="<?php echo base_url('assets/admin/js/summernote/summernote-lite.min.css'); ?>" rel="stylesheet">
-<script src="<?php echo base_url('assets/admin/js/summernote/summernote-lite.min.js'); ?>"></script>
-
-<script>
-    $('#summernote').summernote({
-
-        tabsize: 2,
-        height: 130,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link']],
-            ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-    });
-</script>
-
-
-<script>
-    $(document).on('click', '.number-spinner button', function() {
-        var btn = $(this),
-            oldValue = btn.closest('.number-spinner').find('input').val().trim(),
-            newVal = 0;
-
-        if (btn.attr('data-dir') == 'up') {
-            newVal = parseInt(oldValue) + 1;
-        } else {
-            if (oldValue > 1) {
-                newVal = parseInt(oldValue) - 1;
-            } else {
-                newVal = 1;
-            }
-        }
-        btn.closest('.number-spinner').find('input').val(newVal);
-    });
-</script>
-
-
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02dc8624cb9814"></script>
 </body>
 
 </html>
