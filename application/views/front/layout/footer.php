@@ -20,8 +20,8 @@ $meta      = $this->meta_model->get_meta();
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="<?php echo base_url(); ?>"><img class="mb-2" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>" alt="" width="250"></a>
-                    <span style="font-size:18px;"><br>
+                    <a href="<?php echo base_url(); ?>"><img class="mb-2 img-fluid" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>"></a>
+                    <span style="font-size:15px;"><br>
                         <i class="fa fa-phone"></i> <?php echo $meta->telepon ?><br>
                         <i class="fa fa-envelope"></i> <?php echo $meta->email ?>
                     </span>
@@ -39,7 +39,7 @@ $meta      = $this->meta_model->get_meta();
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
                         <li><a class="text-muted" href="<?php echo base_url('contact') ?>">Contact Us</a></li>
-                        <!-- <li><a class="text-muted" href="<?php echo base_url('products') ?>">Produk</a></li> -->
+                        <li><a class="text-muted" href="<?php echo base_url('products') ?>">Rental Mobil</a></li>
                         <!-- <li><a class="text-muted" href="<?php echo base_url('berita') ?>">Berita</a></li> -->
                     </ul>
                 </div>

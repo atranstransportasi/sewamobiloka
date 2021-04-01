@@ -1,4 +1,4 @@
-<section>
+<section class="mb-3">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -33,73 +33,73 @@
 
 
 
-<section class="bg-white">
+<section class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-8 p-md-5">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
+                    <div class="col-md-6 col-6">
+                        <div class="card border">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <div style="font-size:50px;color:#00a2e9;">
-                                            <i class="ti-id-badge"></i>
+                                            <i class="ti-credit-card"></i>
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <h4>Harga Murah</h4>
+                                        <h4>Harga Sewa Murah</h4>
                                         Sewa Mobil Murah dengan pelayanan bagus.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card">
+                    <div class="col-md-6 col-6">
+                        <div class="card border">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <div style="font-size:50px;color:#00a2e9;">
-                                            <i class="ti-bookmark-alt"></i>
+                                            <i class="ti-headphone-alt"></i>
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <h4>Support 24 Jam</h4>
-                                        Support layanan 24 Jam.
+                                        <h4>Support CS 24 Jam</h4>
+                                        Support layanan customer Service 24 Jam.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card">
+                    <div class="col-md-6 col-6">
+                        <div class="card border">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <div style="font-size:50px;color:#00a2e9;">
-                                            <i class="ti-stats-up"></i>
+                                            <i class="ti-light-bulb"></i>
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <h4>Promo Menarik</h4>
+                                        <h4>Promo Potongan Harga</h4>
                                         Dapatkan Promo untuk member.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card">
+                    <div class="col-md-6 col-6 mb-3">
+                        <div class="card border">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <div style="font-size:50px;color:#00a2e9;">
-                                            <i class="ti-gift"></i>
+                                            <i class="ti-map-alt"></i>
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <h4>Layanan terdekat</h4>
+                                        <h4>Layanan di Kota Besar</h4>
                                         Tersedia di Berbagai Kota Besar di Indonesia.
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
 
             </div>
             <div class="col-md-4 form-signup">
-                <div class="card">
+                <div class="card border">
 
                     <div class="card-body">
 
@@ -182,13 +182,13 @@
     </div>
 </section>
 
-<section class="produk-home my-md-3 py-2 bg-white">
+<section class="produk-home my-md-3 py-5 bg-white">
     <div class="container">
         <h2 class="text-center pb-3"> Jakarta </h2>
         <div class="row">
             <?php foreach ($antam as $antam) : ?>
-                <div class="col-md-3">
-                    <div class="card text-center">
+                <div class="col-md-3 col-6">
+                    <div class="card text-center border">
                         <img class="card-img-top" src="<?php echo base_url('assets/img/product/' . $antam->product_img); ?>" alt="Card image cap">
                         <div class="card-body">
 
@@ -218,24 +218,23 @@
 
 
 
-<!-- Popular Routes
-      ============================================= -->
-<div class="container">
-    <h2 class="text-9 font-weight-600 text-center mt-5">Pilih Kota Destinasi Sewa mobil</h2>
-    <p class="lead text-dark text-center mb-5">Pilih lokasi sewa mobil</p>
-    <div class="row">
+<section class="my-5 py-5">
+    <div class="container">
+        <h2 class="text-9 font-weight-600 text-center">Pilihan Kota Destinasi Sewa mobil</h2>
+        <p class="lead text-dark text-center mb-5">Pilih lokasi sewa mobil di Kota Anda</p>
+        <div class="row">
 
-        <?php foreach ($kota as $kota) : ?>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url('products/category_products/' . $kota->id); ?>">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5> <?php echo $kota->category_product_name; ?> </h5>
+            <?php foreach ($kota as $kota) : ?>
+                <div class="col-md-6 col-lg-4">
+                    <a href="<?php echo base_url('products/category_products/' . $kota->id); ?>" style="text-decoration:none;">
+                        <div class="card border">
+                            <div class="card-body">
+                                <h5> <?php echo $kota->category_product_name; ?> </h5>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-</div>
-<!-- Popular Routes end -->
+</section>

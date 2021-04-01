@@ -24,7 +24,7 @@
             <div class="row">
                 <?php foreach ($products as $products) : ?>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-6">
                         <figure class="card">
                             <?php if ($products->product_img == NULL) : ?>
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/product/empty_image.jpg'); ?>">
