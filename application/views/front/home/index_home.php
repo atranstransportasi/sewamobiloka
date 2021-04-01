@@ -33,10 +33,10 @@
 
 
 
-<section class="bg-light">
+<section class="bg-light my-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 p-md-5">
+            <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-6 col-6">
                         <div class="card border">
@@ -109,7 +109,7 @@
                 </div>
 
             </div>
-            <div class="col-md-4 form-signup">
+            <div class="col-md-4">
                 <div class="card border">
 
                     <div class="card-body">
@@ -225,7 +225,7 @@
         <div class="row">
 
             <?php foreach ($kota as $kota) : ?>
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-4 col-6">
                     <a href="<?php echo base_url('products/category_products/' . $kota->id); ?>" style="text-decoration:none;">
                         <div class="card border">
                             <div class="card-body">

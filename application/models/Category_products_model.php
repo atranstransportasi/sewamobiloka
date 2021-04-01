@@ -22,7 +22,7 @@ class Category_products_model extends CI_Model
     $this->db->select('*');
     $this->db->from('category_products');
     $this->db->order_by('id', 'DESC');
-    $this->db->limit(6);
+    $this->db->limit(9);
     $query = $this->db->get();
     return $query->result();
   }

@@ -148,12 +148,7 @@ i {
 
 /* MENU STYLES */
 /* Navbar Animated */
-.navbar {
-  padding: 0px !important;
-  -webkit-box-shadow: 4px 9px 25px -6px rgba(77, 77, 77, 0.61);
-  -moz-box-shadow: 4px 9px 25px -6px rgba(77, 77, 77, 0.61);
-  box-shadow: 4px 9px 25px -6px rgba(77, 77, 77, 0.61);
-}
+
 ul.dropdown-menu {
   width: 11vw;
   border-radius: 0px;
@@ -230,9 +225,6 @@ ul.navbar-nav .nav-item:after {
   min-height: 80px;
   font-weight: normal;
   font-size: 16px;
-  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .navbar ul li a {
   color: #333 !important;
