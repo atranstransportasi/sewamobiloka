@@ -1,6 +1,7 @@
 <?php
 $meta      = $this->meta_model->get_meta();
-
+$kota = $this->category_products_model->get_category_products();
+$category = $this->category_products_model->get_category_products();
 ?>
 
 
@@ -20,7 +21,7 @@ $meta      = $this->meta_model->get_meta();
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="<?php echo base_url(); ?>"><img class="mb-2 img-fluid" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>"></a>
+                    <a href="<?php echo base_url(); ?>"><img class="mb-2 img-fluid pr-3" src="<?php echo base_url('assets/img/logo/' . $meta->logo) ?>"></a>
                     <span style="font-size:15px;"><br>
                         <i class="fa fa-phone"></i> <?php echo $meta->telepon ?><br>
                         <i class="fa fa-envelope"></i> <?php echo $meta->email ?>
@@ -34,7 +35,7 @@ $meta      = $this->meta_model->get_meta();
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-6">
                     <h5>Halaman</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="<?php echo base_url('about') ?>">About Us</a></li>
@@ -43,13 +44,31 @@ $meta      = $this->meta_model->get_meta();
                         <!-- <li><a class="text-muted" href="<?php echo base_url('berita') ?>">Berita</a></li> -->
                     </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-6">
                     <h5>Payment</h5>
 
                     <img src="<?php echo base_url('assets/img/logo/payment.jpg'); ?>" class="img-fluid">
 
                 </div>
             </div>
+
+            <section class="border-top my-3 pt-3" style="font-size:12px">
+
+                <h4>Rental dan Sewa mobil Murah dan Terbaik di Kota besar seluruh Indonesia.</h4>
+                <p>Bagi Anda yang ingin sewa mobil di kota
+                    <?php foreach ($kota as $kota) : ?>
+                        <?php echo $kota->category_product_name; ?>,
+                    <?php endforeach; ?>
+                    , anda bisa memilih sewamobiloka.com sebagai layanan sewa mobil di Indonesia. Jika ingin menyewa mobil dengan kualitas terbaik anda harus memilih tempat sewa mobil yang tepat. Salah satunya yang juga penting adalah Fasilitas dan Pelayanan. Memilih tempat sewa mobil yang berkualitas, menjadi hal yang harus Anda pikirkan dengan baik.</p>
+
+                <p>Jangan sampai Anda salah memilih tempat sewa mobil jika Anda tidak ingin banyak masalah bermunculan. Entah penjemputan yang tak sesuai, telat dalam melakukan penjemputan, dan masalah-masalah lainnya yang membuat Anda semakin terhambat. Anda harus memilih tempat sewamobil yang berkualitas untuk kebutuhan anda.</p>
+
+                <p>Namun masalahnya penyedia jasa sewa mobil di kota-kota besar banyak sekali, dan semuanya juga menjanjikan kualitas. Jelas ini membuat kita semakin bingung menentukan, jasa penyewaan mobil mana yang paling tepat untuk kita? Tapi Anda tak perlu bingung karena kami mempunyai solusinya. Inilah beberapa poin penting untuk Anda bisa mendapatkan jasa sewa mobil yang terbaik!
+                </p>
+
+            </section>
+
+
         </div>
     </footer>
     <div class="credit text-center text-light py-md-3">Copyright &copy; <?php echo date('Y') ?> - <?php echo $meta->title ?> - <?php echo $meta->tagline ?></div>

@@ -14,9 +14,9 @@
 
         <div class="col-lg-12">
 
-            <h1>Rental Mobil</h1>
+            <h1>Rental Mobil di <?php echo $title; ?></h1>
             <p>Sewa Mobil di <?php echo $title; ?> dengan harga yang murah dengan fasilitas dan pelayanan bagus. Kami menyewakan mobil dengan berbagai macam tipe
-                Silahkan cek list mobil yang bisa anda sewa di bawah ini. Untuk Pemesanan Juga Bisa melalui Chat Wahtsapp <?php echo $meta->telepon; ?></p>
+                Silahkan cek list mobil yang bisa anda sewa di bawah ini. Untuk Pemesanan sewa mobil di <?php echo $title; ?>, anda Bisa melakukan pemesanan melalui Chat Wahtsapp <?php echo $meta->telepon; ?></p>
             <b><?php echo $title; ?></b> <br>
             <!-- Update Harga <?php echo tanggal() ?> -->
             <hr>
