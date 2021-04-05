@@ -62,7 +62,12 @@ $meta = $this->meta_model->get_meta();
     </li>
 
     <hr class="sidebar-divider">
-
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('admin/pengaturan'); ?>">
+            <i class="far fa-fw fa-user"></i>
+            <span>Pengaturan email</span>
+        </a>
+    </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
         Seting Web

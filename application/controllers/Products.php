@@ -273,6 +273,7 @@ class Products extends CI_Controller
     $this->email->from("$email_order->smtp_user", ' Order ' . $transaksi->kode_transaksi);
     $this->email->to($this->input->post('user_email'));
     $this->email->cc($email_order->cc_email);
+    $this->email->bcc($email_order->bcc_email);
 
 
     $this->email->subject('Order ' . $transaksi->kode_transaksi . '');
@@ -525,15 +526,7 @@ class Products extends CI_Controller
                   </div>
                   </div>
                   <br>
-
-
-
-
-
-
-
-
-                <br><br>
+            
 
                 <div style="border:1px solid #ddd;border-radius:4px">
                 <div style="background:#0279d6;color:#ffff;padding:5px 0 5px 20px;border-radius:4px 4px 0 0">
@@ -587,10 +580,6 @@ class Products extends CI_Controller
                   </div>
                   <br>
 
-
-
-
-                
 
                 <table cellspacing="0" cellpadding="0" width="100%">
                   <tr>

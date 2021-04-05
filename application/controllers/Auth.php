@@ -163,16 +163,15 @@ class Auth extends CI_Controller
 
 		$email_order = $this->pengaturan_model->email_register();
 
-
 		$config = [
 
-			'protocol'     => "$email_order->protocol",
-			'smtp_host'   => "$email_order->smtp_host",
-			'smtp_port'   => $email_order->smtp_port,
-			'smtp_user'   => "$email_order->smtp_user",
-			'smtp_pass'   => "$email_order->smtp_pass",
-			'mailtype'     => 'html',
-			'charset'     => 'utf-8',
+			'protocol'     	=> "$email_order->protocol",
+			'smtp_host'   	=> "$email_order->smtp_host",
+			'smtp_port'   	=> $email_order->smtp_port,
+			'smtp_user'   	=> "$email_order->smtp_user",
+			'smtp_pass'   	=> "$email_order->smtp_pass",
+			'mailtype'     	=> 'html',
+			'charset'     	=> 'utf-8',
 
 
 		];
@@ -184,6 +183,7 @@ class Auth extends CI_Controller
 
 		$this->email->from("$email_order->smtp_user", 'Sewamobiloka');
 		$this->email->to($this->input->post('real_email'));
+		$this->email->cc($email_order->cc_email);
 
 		if ($type == 'verify') {
 			$this->email->subject('Account Verification');
