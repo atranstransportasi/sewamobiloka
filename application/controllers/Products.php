@@ -543,6 +543,11 @@ class Products extends CI_Controller
                   </tr>
 
                   <tr>
+                  <td>Nomor Hp. </td> 
+                  <td>: ' . $transaksi->user_phone . '</td>
+                  </tr>
+
+                  <tr>
                   <td>Mobil </td> 
                   <td>: ' . $transaksi->product_name . '</td>
                   </tr>
