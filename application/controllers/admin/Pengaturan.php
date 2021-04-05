@@ -47,6 +47,7 @@ class Pengaturan extends CI_Controller
                 'smtp_host'             => $this->input->post('smtp_host'),
                 'smtp_port'                => $this->input->post('smtp_port'),
                 'smtp_user'             => $this->input->post('smtp_user'),
+                'cc_email'             => $this->input->post('cc_email'),
                 'smtp_pass'               => $this->input->post('smtp_pass'),
                 'date_updated'            => time()
             ];

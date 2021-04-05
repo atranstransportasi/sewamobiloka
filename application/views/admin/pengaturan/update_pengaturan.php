@@ -51,7 +51,7 @@
             <label class="col-lg-3 col-form-label">Email Ke Admin <span class="text-danger">*</span>
             </label>
             <div class="col-lg-6">
-                <input type="text" class="form-control" name="smtp_user" value="<?php echo $pengaturan->cc_email; ?>">
+                <input type="text" class="form-control" name="cc_email" value="<?php echo $pengaturan->cc_email; ?>">
             </div>
         </div>
         <div class="form-group row">
